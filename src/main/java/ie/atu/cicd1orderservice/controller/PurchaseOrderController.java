@@ -25,4 +25,10 @@ public class PurchaseOrderController {
     public PurchaseOrder create(@RequestBody PurchaseOrder order) {
         return service.create(order);
     }
+
+    @GetMapping("/test-catalog/{productId}")
+    public String testCatalogConnection(
+            @PathVariable Long productId) {
+        return service.testCatalogConnection(productId);
+    }
 }
